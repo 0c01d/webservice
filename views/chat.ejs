@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('head', {}); %>
+</head>
+<body>
+<%- include('header', {}); %>
+<div class="content">
+    <% if (chat) { %>
+    <div class="pure-g chat">
+        <div class="pure-u-1-3 chat-info">
+            <div class="info">
+                <p><%=chat.comment %> <%= chat.newsId %> <%=chat.name %> </p>
+            </div>
+        </div>
+    </div>
+    <% } %>
+</div>
+<%- include('footer', {}); %>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "this": {
+    "port": 8440
+  },
+  "project": {
+    "name": "Ocold"
+  },
+  "api": {
+    "address": "localhost",
+    "port": 8765
+  }
+}

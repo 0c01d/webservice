@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('head', {}); %>
+</head>
+<body>
+    <%- include('header', {}); %>
+    <div class="content">
+        <% if (chats) { %>
+        <table class="pure-table" width="100%">
+            <thead>
+                <tr align="center">
+                    <th></th>
+                    <th>Comment</th>
+                    <th>NewsId</th>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% chats.forEach(function (chat, position) { %>
+                <tr <% if (position % 2) { %>class="pure-table-odd" <% } %>>
+                    <td> <%= chat.comment %> </td>
+                    <td> <%= chat.newsId %> </td>
+                    <td> <%= chat.name %> </td>
+                    <td align="center"></td>
+                    <td align="center"></td>
+                </tr>
+               <% }); %>
+            </tbody>
+        </table>
+        <% } else { %>
+        <p> Couldn't load any chats data</p>
+        <% } %>
+    </div>
+    <%- include('footer', {}); %>
+</body>
+</html>

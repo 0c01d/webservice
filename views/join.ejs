@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('head', {}); %>
+</head>
+<body>
+<%- include('header', {}); %>
+<div class="content">
+
+    <div class="pure-g">
+        <div class="pure-u-1-1 join-head">
+            <div class="pure-menu pure-menu-horizontal organization-submenu">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item">
+                        <a class="pure-menu-link" href="/join/" <% if (pageType === "main" ) { %>style="font-weight: bold;"<% } %>>
+                            Step 1: Public account
+                        </a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a class="pure-menu-link" href="/join/info" <% if (pageType === "info" ) { %>style="font-weight: bold;"<% } %>>
+                            Step 2: Personal information
+                        </a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a class="pure-menu-link" href="/join/personalize" <% if (pageType === "personalize" ) { %>style="font-weight: bold;"<% } %>>
+                            Step 3: Your interests
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <% if (pageType === "main") { %>
+        <div class="pure-u-1-1 join-body">
+            <form class="pure-form pure-form-aligned" method="post" accept-charset="UTF-8" action="/join" autocomplete="off" id="signup-join-form">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <label for="comment">NewsComment</label>
+                        <input id="comment" name="comment" type="text" placeholder="Comment" pattern="^[a-zA-Z]+$" required>
+                        <span class="pure-form-message-inline">This is a required field</span>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="newsId">News Id</label>
+                        <input id="newsId" name="newsId" type="text" placeholder="News Id" required>
+                        <span class="pure-form-message-inline">This is a required field</span>
+                    </div>
+                    <div class="pure-control-group">
+                        <label for="name">Name</label>
+                        <input id="name" name="name" type="text" placeholder="Name" required>
+                        <span class="pure-form-message-inline">This is a required field</span>
+                    </div>
+                    <div class="pure-controls">
+
+                        <button type="submit" id="submit" class="pure-button pure-button-primary">Join <%=projectName%></button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <script src="/js/join.js"></script>
+    <% } %>
+
+    <% if (pageType === "info") { %>
+    <form class="pure-form pure-form-aligned" method="post" accept-charset="UTF-8" action="/join/info" autocomplete="off" id="signup-info-form">
+        <fieldset>
+            <div class="pure-control-group">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Name">
+            </div>
+            <div class="pure-control-group">
+                <label for="surname">Surname</label>
+                <input id="surname" name="surname" type="text" placeholder="Surname">
+            </div>
+            <div class="pure-control-group">
+                <label for="pubEmail">Public Email Address</label>
+                <input id="pubEmail" name="pubEmail" type="email" placeholder="Email Address">
+            </div>
+            <div class="pure-control-group">
+                <label for="fbLink">Facebook</label>
+                <input id="fbLink" name="fbLink" type="text" placeholder="Facebook">
+            </div>
+            <div class="pure-control-group">
+                <label for="ghLink">GitHub</label>
+                <input id="ghLink" name="ghLink" type="text" placeholder="GitHub">
+            </div>
+            <div class="pure-controls">
+                <button type="submit" class="pure-button pure-button-primary">Save info</button>
+            </div>
+        </fieldset>
+    </form>
+    <% } %>
+</div>
+<%- include('footer', {}); %>
+</body>
+</html>

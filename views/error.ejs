@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <%- include('head', {}); %>
+    </head>
+<body>
+    <%- include('header', {}); %>
+    <div class="content">
+        <% if (message.includes("503") === true) { %>
+        <h3>Service is temporary unavalable</h3>
+        Sorry for the inconvenience. Please, try again later.
+        <% } else if (message.includes("404") || error.status === 404) { %>
+        <h3>Not found</h3>
+                Page is not found.
+                <%} %>
+
+                <% if (false) { %>
+                <div>
+                    <pre>
+                        <%=message%>
+                        <%=error.status%>
+                        <%=error.stack %>
+                    </pre>
+    </div>
+                <% } %>
+    </div>
+
+<%- include('footer', {}); %>
+</body>
+</html>
