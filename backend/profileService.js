@@ -4,13 +4,13 @@ const getOptions = require("./../options");
 
 const apiService = `http://${config.api.address}:${config.api.port}`;
 
-class chatService {
+class profileService {
 
-    static createChat(chatRequest) {
-        const options = getOptions(apiService, `/chat-service/chatnews`, null, chatRequest);
+    static createProfile(profileRequest) {
+        const options = getOptions(apiService, `/client-service/profile`, null, profileRequest);
         return rp.post(options);
     }
 
 }
 
-module.exports = chatService;
+module.exports = profileService;

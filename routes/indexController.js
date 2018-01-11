@@ -7,7 +7,7 @@ const config = require("./../config");
 router.get('/', (req, res, next) => {
     const pageType = "main";
 
-    res.render('dashboard', {
+    res.render('home', {
         projectName: config.project.name,
         title: config.project.name,
         pageType: pageType

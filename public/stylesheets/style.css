@@ -1,5 +1,6 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #333;
 }
 
 a {
@@ -11,411 +12,226 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Header */
-.custom-menu-wrapper {
-  background-color: #808080;
-  margin-bottom: 2.5em;
-  white-space: nowrap;
+.primary-button,
+.secondary-button {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-radius: 20px;
+}
+.primary-button {
+  color: #fff;
+  background: #1b98f8;
+  margin: 1em 0;
+}
+.secondary-button {
+  background: #fff;
+  border: 1px solid #ddd;
+  color: #666;
+  padding: 0.5em 2em;
+  font-size: 80%;
+}
+
+/*
+ * -- LAYOUT STYLES --
+ * This layout consists of three main elements, `#nav` (navigation bar), `#list` (email list), and `#main` (email content). All 3 elements are within `#layout`
+ */
+#layout, #nav, #list, #main {
+  margin: 0;
+  padding: 0;
+}
+
+/* Make the navigation 100% width on phones */
+#nav {
+  width: 100%;
+  height: 40px;
   position: relative;
-}
-
-.custom-menu-wrapper a {
-  text-decoration: none;
-}
-
-.custom-menu {
-  display: inline-block;
-  width: auto;
-  vertical-align: middle;
-  -webkit-font-smoothing: antialiased;
-}
-
-/*TODO*/
-.custom-menu .pure-menu-link:not(.pure-menu-children) {
-  color: white;
-}
-
-.pure-menu-has-children .pure-menu-item {
-  color: #808080;
-  background-color: #808080;
-}
-
-.custom-menu .pure-menu-heading {
-  color: white;
-}
-
-.custom-menu .pure-menu-link:hover,
-.custom-menu .pure-menu-heading:hover {
-  background-color: transparent;
-}
-
-.custom-menu-top {
-  position: relative;
-  padding-top: .5em;
-  padding-bottom: .5em;
-}
-
-.custom-menu-brand {
-  display: block;
+  background: rgb(37, 42, 58);
   text-align: center;
-  position: relative;
+}
+/* Show the "Menu" button on phones */
+#nav .nav-menu-button {
+  display: block;
+  top: 0.5em;
+  right: 0.5em;
+  position: absolute;
 }
 
-.custom-menu-toggle {
-  width: 44px;
-  height: 44px;
-  display: block;
-  position: absolute;
-  top: 3px;
-  right: 0;
+/* When "Menu" is clicked, the navbar should be 80% height */
+#nav.active {
+  height: 80%;
+}
+/* Don't show the navigation items... */
+.nav-inner {
   display: none;
 }
 
-.custom-menu-toggle .bar {
-  background-color: white;
+/* ...until the "Menu" button is clicked */
+#nav.active .nav-inner {
   display: block;
-  width: 20px;
-  height: 2px;
-  border-radius: 100px;
-  position: absolute;
-  top: 22px;
-  right: 12px;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  transition: all 0.5s;
+  padding: 2em 0;
 }
 
-.custom-menu-toggle .bar:first-child {
-  -webkit-transform: translateY(-6px);
-  -moz-transform: translateY(-6px);
-  -ms-transform: translateY(-6px);
-  transform: translateY(-6px);
+
+/*
+ * -- NAV BAR STYLES --
+ * Styling the default .pure-menu to look a little more unique.
+ */
+#nav .pure-menu {
+  background: transparent;
+  border: none;
+  text-align: left;
+}
+#nav .pure-menu-link:hover,
+#nav .pure-menu-link:focus {
+  background: rgb(55, 60, 90);
+}
+#nav .pure-menu-link {
+  color: #fff;
+  margin-left: 0.5em;
+}
+#nav .pure-menu-heading {
+  border-bottom: none;
+  font-size:110%;
+  color: rgb(75, 113, 151);
 }
 
-.custom-menu-toggle.x .bar {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
 
-.custom-menu-toggle.x .bar:first-child {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-}
+/*
+ * -- EMAIL STYLES --
+ * Styles relevant to the email messages, labels, counts, and more.
+ */
 
-.custom-menu-screen {
-  background-color: rgba(0, 0, 0, 0.5);
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  transition: all 0.5s;
-  height: 3em;
-  width: 70em;
-  position: absolute;
-  top: 0;
-  z-index: -1;
-}
-
-.custom-menu-tucked .custom-menu-screen {
-  -webkit-transform: translateY(-44px);
-  -moz-transform: translateY(-44px);
-  -ms-transform: translateY(-44px);
-  transform: translateY(-44px);
-}
-
-/* Content */
-.content {
-  max-width: 1012px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-bottom: 30px;
-}
-
-.content textarea {
-  resize: none;
-  overflow: hidden;
-}
-
-.status .service {
-  text-align: center;
-}
-
-.status .service .service-name {
-  padding: 4px;
-}
-
-.status .service .service-status {
-  padding: 4px;
-  text-transform: capitalize;
-}
-
-/* Join */
-.join-head{
-  margin-bottom: 20px;
-}
-
-.join-body {
-  margin:0 auto;
-}
-
-/* Dashboard */
-.dashboard-submenu {
-  margin-bottom: 20px;
-}
-
-.dashboard .post {
-  border-bottom: 1px solid gainsboro;
-  padding: 12px;
-}
-
-/* Search */
-.search .menu {
-  margin-bottom: 20px;
-  max-width: 640px;
-}
-
-.search .menu .bar {
-  margin-bottom: 20px;
-}
-
-.search-menu-item-selected {
-  font-weight: bold;
-}
-
-.search .users {
-  max-width: 640px;
-}
-
-/* Search: users */
-.search .users .user {
-  border-bottom: 1px solid gainsboro;
-  padding: 20px;
-}
-
-.search .users .user img {
-  background-color: #aaaaaa
-}
-
-.search .navigation {
-  width: 80px;
-  padding-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.search .navigation .current-page {
-  font-weight: bold;
-}
-
-/* User */
-.user .user-info .avatar {
-  height: 200px;
-  width: 200px;
-  margin: auto;
-  padding-bottom: 1em;
-}
-
-.user .user-info .info {
-  border-top: 1px solid gainsboro;
-}
-
-.user .user-info .social {
-  border-top: 1px solid gainsboro;
-}
-
-.user .user-info .social .item {
-  float: left;
-  margin: 10px;
-}
-
-.user .teams .title {
-  text-align: center;
-}
-
-.user .teams .team {
-  border: 1px solid gainsboro;
-  border-radius: 10px;
-  /*display: inline-block;*/
-}
-
-.user .teams .team .avatar {
-  margin-left: auto;
-  margin-right: auto;
-  /*align-content: center;*/
-  width: 80px;
-  height: 80px;
-}
-
-.user .teams .team .avatar img{
-  width: 100%;
-  height: 100%;
-}
-
-.user .teams .team .title {
-  /*padding-top: 10px;*/
-  /*padding-bottom: 10px;*/
-  text-align: center;
-  vertical-align: middle;
-  float: right;
-  line-height: 80px;
-}
-
-/* Organizations */
-.organizations .organization {
-  position: relative;
-  z-index: 1;
-  background: #f9f9f9;
-  max-width: 400px;
-  height: 80px;
-  padding: 10px 15px 15px 10px;
-  margin: 10px 10px 10px 10px;
-  border: 1px solid #e5e5df;
+.email-label-personal,
+.email-label-work,
+.email-label-travel {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 0.5em;
   border-radius: 3px;
-  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
-  overflow: hidden;
 }
-
-.organizations a .organization,
-.organizations a:focus .organization {
-  color: black;
-  text-decoration: none;
+.email-label-personal {
+  background: #ffc94c;
 }
-
-.organizations .organization a:hover {
-  background: #f3f3f3;
-  box-shadow: 2.5px 2.5px 0 rgba(0, 0, 0, 0.10);
+.email-label-work {
+  background: #41ccb4;
 }
-
-.organizations .organization-img {
-  min-width: 60px;
-}
-
-/* Organization */
-.organization .submenu {
-  margin-bottom: 20px;
-}
-
-/* Organization: teams */
-.organization .teams .control {
-  margin-bottom: 20px;
-}
-
-/* Organization: new team */
-.organization .new-team {
-  align-content: right;
+.email-label-travel {
+  background: #40c365;
 }
 
 
-/* Team */
-.team .submenu {
-  margin-bottom: 20px;
+/*
+ * -- TABLET (AND UP) MEDIA QUERIES --
+ * On tablets and other medium-sized devices, we want to customize some
+ * of the mobile styles.
+ */
+@media {
 
-}
-
-.team .new-project {
-  /*align-content: right;*/
-  margin: 10px;
-}
-
-/* Manufacturer */
-.component .control {
-  margin-bottom: 20px;
-}
-
-/* Manufacturer */
-.manufacturer .submenu {
-  margin-bottom: 20px;
-}
-
-.danger {
-  color: white;
-  background-color: rgba(255,0,0,0.51)
-}
-
-.error {
-  border-color: #ff0000 !important;
-}
-
-.blur {
-  color: transparent;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-/* Footer */
-.footer {
-  margin-top: 10px;
-  padding: 1em 0;
-  margin-right: 32px;
-  margin-left: 32px;
-  border-top: 1px solid gainsboro;
-}
-
-.footer a {
-  color: #aaa;
-  font-size: 90%;
-}
-.footer .pure-menu a:hover,
-.footer .pure-menu a:focus {
-  background: none;
-}
-
-@media (max-width: 62em) {
-
-  .custom-menu {
-    display: block;
+  #background-dark {
+    padding-left: 150px;
+    position:absolute;
   }
 
-  .custom-menu-toggle {
-    display: block;
-    display: none\9;
+  #background-image {
+    padding-left: 150px;
+    width: 1216px;
+    height:652px;
   }
 
-  .custom-menu-bottom {
-    position: absolute;
+#button-register {
+  width: 222px;
+}
+
+  #button-login {
+    width: 222px;
+  }
+
+  #register-table {
+    border-radius: 50px;
+    padding-top: 20px;
+    padding-left: 5%;
+    background-color: #ffffff;
+    position:fixed;
+    top: 25%;
+    left: 30%;
+    right: 38%;
+  }
+
+  #register-form {
+    border-radius: 50px;
+    background-color: #ffffff;
+  }
+
+  /* Move the layout over so we can fit the nav + list in on the left */
+  #layout {
+    padding-left:500px; /* "left col (nav + list)" width */
+    position: relative;
+  }
+
+  /* These are position:fixed; elements that will be in the left 500px of the screen */
+  #nav, #list {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+  }
+  #nav {
+    margin-left:-500px; /* "left col (nav + list)" width */
+    width:150px;
+    height: 100%;
+  }
+
+  /* Show the menu items on the larger screen */
+  .nav-inner {
+    display: block;
+    padding: 2em 0;
+  }
+
+  /* Hide the "Menu" button on larger screens */
+  #nav .nav-menu-button {
+    display: none;
+  }
+
+  #list {
+    margin-left: -350px;
     width: 100%;
-    border-top: 1px solid #eee;
-    background-color: #808080\9;
-    z-index: 100;
+    height: 33%;
+    border-bottom: 1px solid #ddd;
   }
 
-  .custom-menu-bottom .pure-menu-link {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    transition: all 0.5s;
-  }
-
-  .custom-menu-bottom.custom-menu-tucked .pure-menu-link {
-    -webkit-transform: translateX(-140px);
-    -moz-transform: translateX(-140px);
-    -ms-transform: translateX(-140px);
-    transform: translateX(-140px);
-    opacity: 0;
-    opacity: 1\9;
-  }
-
-  .pure-menu-horizontal.custom-menu-tucked {
-    z-index: -1;
-    top: 45px;
-    position: absolute;
-    overflow: hidden;
+  #main {
+    position: fixed;
+    top: 33%;
+    right: 0;
+    bottom: 0;
+    left: 150px;
+    overflow: auto;
+    width: auto; /* so that it's not 100% */
   }
 
 }
 
-@media (min-width: 48em) {
+/*
+ * -- DESKTOP (AND UP) MEDIA QUERIES --
+ * On desktops and other large-sized devices, we want to customize some
+ * of the mobile styles.
+ */
+@media (min-width: 60em) {
 
-  .footer {
-    text-align: center;
+  /* This will take up the entire height, and be a little thinner */
+  #list {
+    margin-left: -350px;
+    width:350px;
+    height: 100%;
+    border-right: 1px solid #ddd;
   }
 
+  /* This will now take up it's own column, so don't need position: fixed; */
+  #main {
+    position: static;
+    margin: 0;
+    padding: 0;
+  }
 }

@@ -35,18 +35,15 @@
             <form class="pure-form pure-form-aligned" method="post" accept-charset="UTF-8" action="/join" autocomplete="off" id="signup-join-form">
                 <fieldset>
                     <div class="pure-control-group">
-                        <label for="comment">NewsComment</label>
-                        <input id="comment" name="comment" type="text" placeholder="Comment" pattern="^[a-zA-Z]+$" required>
+                        <input name="comment" type="text" placeholder="Comment" pattern="^[a-zA-Z]+$" required>
                         <span class="pure-form-message-inline">This is a required field</span>
                     </div>
                     <div class="pure-control-group">
-                        <label for="newsId">News Id</label>
-                        <input id="newsId" name="newsId" type="text" placeholder="News Id" required>
+                        <input name="newsId" type="text" placeholder="News Id" required>
                         <span class="pure-form-message-inline">This is a required field</span>
                     </div>
                     <div class="pure-control-group">
-                        <label for="name">Name</label>
-                        <input id="name" name="name" type="text" placeholder="Name" required>
+                        <input name="name" type="text" placeholder="Name" required>
                         <span class="pure-form-message-inline">This is a required field</span>
                     </div>
                     <div class="pure-controls">
@@ -57,10 +54,11 @@
             </form>
         </div>
     </div>
-    <script src="/js/join.js"></script>
+    <!--<script src="/js/join.js"></script>-->
     <% } %>
 
     <% if (pageType === "info") { %>
+
     <form class="pure-form pure-form-aligned" method="post" accept-charset="UTF-8" action="/join/info" autocomplete="off" id="signup-info-form">
         <fieldset>
             <div class="pure-control-group">
@@ -90,6 +88,6 @@
     </form>
     <% } %>
 </div>
-<%- include('footer', {}); %>
+<!--<%- include('footer', {}); %>-->
 </body>
 </html>

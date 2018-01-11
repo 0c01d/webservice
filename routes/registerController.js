@@ -2,18 +2,19 @@ const express = require('express');
 const router = express.Router();
 const config = require("./../config");
 const errorHandler = require("./abstractController");
-const chatService = require("./../backend/chatService");
+const profileService = require("./../backend/profileService");
 
 /**
  * Render join page
  */
 router.get('/', (req, res, next) => {
     // if (!auth.isAuth()) {
-    res.render('join', {
+    res.render('register', {
         projectName: config.project.name,
         title: config.project.name + " | Join",
-        pageType: "main"
+        pageType: "register"
     });
+
     // } else {
     // 	res.redirect('/');
     // }
@@ -28,17 +29,22 @@ router.post('/', async (req, res, next) => {
 
     if (errors) {
         res.body.errors = errors;
-        res.redirect('/join');
+        res.redirect('/register');
         return next(errors);
     } else {
-        const chatRequest = {
-            comment: req.body.comment,
-            newsId: req.body.newsId,
-            name: req.body.name
+        const profileRequest = {
+            firstname: req.body.firstname,
+            middlename: req.body.middlename,
+            lastname: req.body.lastname,
+            email: req.body.email,
+            phoneNumber: req.body.phoneNumber,
+            gender: req.body.gender,
+            dateOfBirth: req.body.dateOfBirth
+
         };
         try {
-            const chatResponse = await chatService.createChat(chatRequest);
-            res.redirect('/join')
+            const profileResponse = await profileService.createProfile(profileRequest);
+            res.redirect('/register')
         } catch (error) {
             errorHandler(error, req, res, next);
         }
