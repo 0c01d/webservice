@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const config = require("./../config");
 const errorHandler = require("./abstractController");
-const profileService = require("./../backend/profileService");
+const profileService = require("../backend/registerService");
 
 /**
  * Render join page
@@ -33,13 +33,8 @@ router.post('/', async (req, res, next) => {
         return next(errors);
     } else {
         const profileRequest = {
-            firstname: req.body.firstname,
-            middlename: req.body.middlename,
-            lastname: req.body.lastname,
             email: req.body.email,
-            phoneNumber: req.body.phoneNumber,
-            gender: req.body.gender,
-            dateOfBirth: req.body.dateOfBirth
+            password: req.body.password,
 
         };
         try {

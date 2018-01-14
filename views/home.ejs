@@ -3,10 +3,19 @@
     <head>
         <%- include('head', {}); %>
     </head>
-    <body>
+    <body background="../images/background.jpg" id="background-image">
 
     <%- include('header', {}); %>
 
-  <!--  <%- include('footer', {}); %> -->
+    <div>
+        <button disabled class="head-text" >The complete trader’s tool</button>
+    </div>
+    <div>
+        <button class="head-button" onclick="location.href='/register'"  class="pure-button pure-button-primary">Start Trading</button>
+    </div>
+
+    <div class="footer">
+  <%- include('footer', {}); %>
+    </div>
     </body>
 </html>

@@ -1,15 +1,50 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: #333;
+  /*background: url("../images/background.jpg") no-repeat;*/
+}
+.bodynew {
+  background: url("../images/background.jpg");
+  background-size: 100%;
+}
+.bodynew1 {
+  padding-left: 148px;
+}
+
+.head-text {
+  background: #1b98f8;
+  text-align: center;
+  border-radius: 20px;
+  color: white;
+  font-size: 40px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  width:40%;
+  margin-left:30%;
+  margin-top:10%;
+  box-shadow: 1px 1px 1px 1px black;
+  font-family: "Droid Sans"
+
+}
+.head-button {
+  text-align: center;
+  font-family: "Droid Sans";
+  font-size: 30px;
+  background: #1b98f8;
+  border-radius: 10px;
+  margin-left:42%;
+  width: 200px;
+  height: 50px;
+  margin-top: 2%;
+}
+.head-button:hover {
+  box-shadow: 1px 1px 1px 1px black;
+
 }
 
 a {
   color: #00B7FF;
   text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 .primary-button,
@@ -22,7 +57,7 @@ a:hover {
 .primary-button {
   color: #fff;
   background: #1b98f8;
-  margin: 1em 0;
+margin: 1em 0;
 }
 .secondary-button {
   background: #fff;
@@ -32,6 +67,148 @@ a:hover {
   font-size: 80%;
 }
 
+.balancetext {
+
+}
+
+
+.deposit3-frame {
+  margin: 2%;
+  height: 87%;
+}
+
+.deposit2-frame {
+  width: 60%;
+  margin: 2%;
+  max-height: 600px;
+}
+
+#deposit-frame-table-text {
+  text-align: center;
+  color: black;
+  font: 22px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+#deposit-frame-table-text2 {
+  color: darkgray;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+  position: relative;
+  bottom: 0%;
+
+}
+
+.deposit-frame-table1-text {
+  color: darkgrey;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.deposit-frame-table2-text {
+  color: black;
+  font: 28px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.deposit-frame-table1-text:hover {
+  color: black;
+  font: 18px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.deposit-frame-table1 {
+  margin: 3%;
+  height: 30px;
+}
+
+.cabinet-table {
+}
+
+.cabinet-table-list {
+}
+
+.footer {
+  background: white;
+  margin-top:22%;
+  padding-left: 30%;
+}
+
+.register-submenu {
+}
+
+.cabinet-submenu {
+  color: white;
+  margin-top: 5%;
+  margin-left: 30%;
+  max-width: 550px;
+  background: #333;
+  border-radius: 10px;
+}
+
+.payment-method-tables {
+  background: white;
+  margin-top: 20px;
+  height: 400px;
+  width: 60%;
+  margin-bottom: 3.125em;
+  margin-left: 22%;
+}
+
+.payment-method-text-head {
+  margin: 2em 2em 0em 2em;
+  height: 10%;
+  width: 70%;
+}
+
+.border-table1 {
+  max-width: 220px;
+  height: 90px;
+  margin: 1% 1% 1% 1%;
+}
+
+.border-table2 {
+  width: 141px;
+  height: 90px;
+  margin: 1% 1% 1% 1%;
+}
+
+.payment-method-table {
+  box-shadow: 2px 2px 4px 2px #dddddd;
+  border-radius: 4px;
+  margin: 3em 2em 0em 2em;
+  height: 100px;
+  width: 82%;
+}
+
+.deposit-frame-table {
+  padding-top:5px;
+  text-align: center;
+  box-shadow: 2px 2px 4px 2px #dddddd;
+  border-radius: 4px;
+  margin: 0.5em 1em 1em 1em;
+  width: 70%;
+  height: 75px;
+}
+
+.payment-method-table:hover {
+  border: 2px solid green;
+}
+
+.deposit-frame-table:hover {
+  border: 2px solid green;
+}
+
+
+
+
+
+
+
+.button-recharge {
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #333;
+  border-radius: 2em;
+  font-weight: bold;
+  position: relative;
+  bottom: -1.5em;
+}
 /*
  * -- LAYOUT STYLES --
  * This layout consists of three main elements, `#nav` (navigation bar), `#list` (email list), and `#main` (email content). All 3 elements are within `#layout`
@@ -131,13 +308,11 @@ a:hover {
 
   #background-dark {
     padding-left: 150px;
-    position:absolute;
+    page-size: 100%;
   }
 
   #background-image {
-    padding-left: 150px;
-    width: 1216px;
-    height:652px;
+    background-size: 100%;
   }
 
 #button-register {

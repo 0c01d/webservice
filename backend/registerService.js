@@ -4,13 +4,13 @@ const getOptions = require("./../options");
 
 const apiService = `http://${config.api.address}:${config.api.port}`;
 
-class profileService {
+class registerService {
 
-    static createProfile(profileRequest) {
-        const options = getOptions(apiService, `/client-service/profile`, null, profileRequest);
+    static createRegProfile(regProfileRequest) {
+        const options = getOptions(apiService, `/account/profile/wallet`, null, regProfileRequest);
         return rp.post(options);
     }
 
 }
 
-module.exports = profileService;
+module.exports = registerService;

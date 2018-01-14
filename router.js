@@ -10,6 +10,10 @@ const register = require('./routes/registerController');
 
 const login = require('./routes/loginController');
 
+const recharge = require('./routes/rechargeController');
+
+const rechargeQiwi = require('./routes/rechargeDepositController');
+
 function router(app) {
     app.use('/', index);
 
@@ -20,6 +24,10 @@ function router(app) {
     app.use('/register', register);
 
     app.use('/login', login);
+
+    app.use('/cabinet/recharge', recharge);
+
+    app.use('/cabinet/rechargedeposit', rechargeQiwi);
 
 }
 

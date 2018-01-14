@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const config = require("./../config");
 const errorHandler = require("./abstractController");
-const profileService = require("./../backend/profileService");
+const registerService = require("../backend/registerService");
 
 /**
  * Render join page
@@ -32,18 +32,15 @@ router.post('/', async (req, res, next) => {
         res.redirect('/register');
         return next(errors);
     } else {
-        const profileRequest = {
-            firstname: req.body.firstname,
-            middlename: req.body.middlename,
-            lastname: req.body.lastname,
+        const regProfileRequest = {
             email: req.body.email,
             phoneNumber: req.body.phoneNumber,
-            gender: req.body.gender,
-            dateOfBirth: req.body.dateOfBirth
+            nickname: req.body.nickname,
+            password: req.body.password
 
         };
         try {
-            const profileResponse = await profileService.createProfile(profileRequest);
+            const regProfileResponse = await registerService.createRegProfile(regProfileRequest);
             res.redirect('/register')
         } catch (error) {
             errorHandler(error, req, res, next);

@@ -3,27 +3,28 @@
 <head>
     <%- include('head', {}); %>
 </head>
-<body>
-<div class="pure-g">
-    <div class="photo-box pure-u">
-        <img src='../images/background-dark.png' id="background-dark">
+<body class="bodynew">
+
+    <div class="photo-box pure-u-md-1">
+        <img class="bodynew1" src='../images/background-dark.png'>
+
     </div>
-</div>
+
 <%- include('header', {}); %>
 
 <div id="overlay">
 
     <div class="pure-g" id="register-table">
         <div class="pure-u-1">
-            <div class="pure-menu pure-menu-horizontal organization-submenu">
+            <div class="pure-menu pure-menu-horizontal register-submenu">
                 <ul class="pure-menu-list">
                     <li class="pure-menu-item">
-                        <a class="pure-menu-link" href="login" <% if (pageType === "login" ) { %>style="font-weight: bold;"<% } %>>
+                        <a class="pure-menu-link" href="login" <% if (pageType === "login" ) { %>style="font-weight: bold; color: #333"<% } %>>
                                Log in
                         </a>
                     </li>
                     <li class="pure-menu-item">
-                        <a class="pure-menu-link" href="/register" <% if (pageType === "register" ) { %>style="font-weight: bold;"<% } %>>
+                        <a class="pure-menu-link" href="/register" <% if (pageType === "register" ) { %>style="font-weight: bold; color: #333"<% } %>>
                                Registration
                         </a>
                     </li>
@@ -37,32 +38,23 @@
             <form class="pure-form pure-form-aligned" method="post" accept-charset="UTF-8" action="/register" autocomplete="on" id="register-form">
                 <fieldset>
                     <div class="pure-control-group">
-                        <input id="firstname" size="30"  name="firstname" type="text" placeholder="Enter Firstname">
+                        <input size="30"  name="nickname" type="text" placeholder="Enter Nickname">
                         <span class="pure-form-message-inline">This is a required field.</span>
                     </div>
 
                     <div class="pure-control-group">
-                        <input id="middlename" size="30" name="middlename" type="text" placeholder="Enter Middlename">
+                        <input size="30" name="phoneNumber" type="text" placeholder="Enter PhoneNubmer">
+                        <span class="pure-form-message-inline">This is a required field.</span>
                     </div>
 
                     <div class="pure-control-group">
-                        <input id="lastname" size="30" name="lastname" type="text" placeholder="Enter Lastname">
+                        <input size="30" name="email" type="text" placeholder="Enter Email Address">
+                        <span class="pure-form-message-inline">This is a required field.</span>
                     </div>
 
                     <div class="pure-control-group">
-                        <input id="email" size="30" name="email" type="text" placeholder="Enter Email Address">
-                    </div>
-
-                    <div class="pure-control-group">
-                        <input id="phoneNumber" size="30" name="phoneNumber" type="text" placeholder="Enter Phone number">
-                    </div>
-
-                    <div class="pure-control-group">
-                        <input id="gender" size="30" name="gender" type="text" placeholder="Enter Gender">
-                    </div>
-
-                    <div class="pure-control-group">
-                        <input id="dateOfBirth" size="30" name="dateOfBirth" type="text" placeholder="Enter Date Of Birth">
+                        <input size="30" name="password" type="text" placeholder="Enter Password">
+                        <span class="pure-form-message-inline">This is a required field.</span>
                     </div>
 
                    <!-- <div>
@@ -75,12 +67,11 @@
                         </label>
                     </div>-->
 
-
                   <!--  <div class="pure-control-group">
                         <input type="date" name="dateOfBirth" class="pure-input-1-2" placeholder="Enter Date of Dirth">
                     </div>-->
 
-                    <button type="submit" id="button-register" class="pure-button pure-button-primary">Sign in</button>
+                    <button type="submit" id="button-register" class="pure-button pure-button-primary">Register</button>
                 </fieldset>
             </form>
         </div>
@@ -91,11 +82,11 @@
             <form class="pure-form pure-form-aligned" method="post" accept-charset="UTF-8" action="/login" autocomplete="on" id="register-form">
                 <fieldset>
                     <div class="pure-control-group">
-                        <input id="firstname" size="30" name="firstname" type="text" placeholder="Enter Email">
+                        <input id="nickname" size="30" name="nickname" type="text" placeholder="Enter Nickname">
                     </div>
 
                     <div class="pure-control-group">
-                        <input id="middlename" size="30" name="middlename" type="text" placeholder="Enter Password">
+                        <input id="password" size="30" name="password" type="text" placeholder="Enter Password">
                     </div>
 
                     <button type="submit" id="button-login" class="pure-button pure-button-primary">Sign in</button>
@@ -105,6 +96,6 @@
 <% } %>
     </div>
 </div>
-<!--  <%- include('footer', {}); %> -->
+
 </body>
 </html>

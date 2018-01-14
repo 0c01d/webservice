@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('head', {}); %>
+    <script src="/js/cabinet.js" language="JavaScript">
+    </script>
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+<%- include('header', {}); %>
+
+
+<div id="cabinet-page">
+
+    <div class="pure-g cabinet-table">
+        <div class="pure-u-1 cabinet-table-list">
+            <div class="pure-menu pure-menu-horizontal cabinet-submenu">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item">
+                        <a class="pure-menu-link" href="/cabinet/recharge" <% if (pageType === "recharge" ) { %>style="font-weight: bold;"<% } %>>
+                            <div>
+                            Deposit
+                            </div>
+                        </a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a class="pure-menu-link" href="/cabinet/payout" <% if (pageType === "payout" ) { %>style="font-weight: bold;"<% } %>>
+                            <div>
+                            Withdraw
+                            </div>
+                        </a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a class="pure-menu-link" href="/cabinet/finhistory" <% if (pageType === "finhistory" ) { %>style="font-weight: bold;"<% } %>>
+                            Transactions
+                        </a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a class="pure-menu-link" href="/cabinet/deals" <% if (pageType === "deals" ) { %>style="font-weight: bold;"<% } %>>
+                            Trades
+                        </a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a class="pure-menu-link" href="/cabinet/personal" <% if (pageType === "personal" ) { %>style="font-weight: bold;"<% } %>>
+                            Profile
+                        </a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a class="pure-menu-link" href="/cabinet/rates" <% if (pageType === "rates" ) { %>style="font-weight: bold;"<% } %>>
+                            Quotes
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <% if (pageType === "recharge") { %>
+
+        <div class="payment-method-tables pure-g">
+
+            <div class="pure-u-md-4-5">
+                <div class="deposit-frame-table1">
+                    <a class="deposit-frame-table2-text" >Select a payment method</a>
+                </div>
+            </div>
+
+            <div class="pure-u-md-1-3 ">
+                <div class="payment-method-table">
+                            <div onclick="location.href='/cabinet/rechargedeposit'">
+                                <img src="../images/qiwi.jpg" height="100">
+                            </div>
+                </div>
+            </div>
+
+            <div class="pure-u-md-1-3">
+                <div class="payment-method-table">
+                            <div onclick="location.href='/cabinet/rechargedeposit'">
+                                <img src="../images/yandex.jpg" height="100">
+                            </div>
+                </div>
+            </div>
+
+            <div class="pure-u-md-1-3">
+                <div class="payment-method-table">
+                            <div onclick="location.href='/cabinet/rechargedeposit'">
+                                <img src="../images/webmoney.jpg" height="100">
+                            </div>
+                </div>
+            </div>
+        </div>
+        <% } %>
+
+        <% if (pageType === "payout") { %>
+        <div class="pure-u">
+            <form class="pure-form pure-form-aligned" method="get" accept-charset="UTF-8" action="/cabinet/payout" autocomplete="on" id="register-form">
+                <fieldset>
+
+                    <button type="submit" id="button-login" class="pure-button pure-button-primary">Sign in</button>
+                </fieldset>
+            </form>
+        </div>
+        <% } %>
+
+        <% if (pageType === "finhistory") { %>
+        <div class="pure-u">
+            <form class="pure-form pure-form-aligned" method="get" accept-charset="UTF-8" action="/cabinet/finhistory" autocomplete="on" id="register-form">
+                <fieldset>
+
+                    <button type="submit" id="button-login" class="pure-button pure-button-primary">Sign in</button>
+                </fieldset>
+            </form>
+        </div>
+        <% } %>
+
+        <% if (pageType === "deals") { %>
+        <div class="pure-u">
+            <form class="pure-form pure-form-aligned" method="get" accept-charset="UTF-8" action="/cabinet/deals" autocomplete="on" id="register-form">
+                <fieldset>
+
+                    <button type="submit" id="button-login" class="pure-button pure-button-primary">Sign in</button>
+                </fieldset>
+            </form>
+        </div>
+        <% } %>
+
+        <% if (pageType === "personal") { %>
+        <div class="pure-u">
+            <form class="pure-form pure-form-aligned" method="get" accept-charset="UTF-8" action="/cabinet/personal" autocomplete="on" id="register-form">
+                <fieldset>
+
+                    <button type="submit" id="button-login" class="pure-button pure-button-primary">Sign in</button>
+                </fieldset>
+            </form>
+        </div>
+        <% } %>
+
+        <% if (pageType === "rates") { %>
+        <div class="pure-u">
+            <form class="pure-form pure-form-aligned" method="get" accept-charset="UTF-8" action="/cabinet/rates" autocomplete="on" id="register-form">
+                <fieldset>
+
+                    <button type="submit" id="button-login" class="pure-button pure-button-primary">Sign in</button>
+                </fieldset>
+            </form>
+        </div>
+        <% } %>
+
+        <% if (pageType === "recharge-qiwi") { %>
+
+        <div class="payment-method-tables pure-g">
+            <div class="pure-u-md-2-3 deposit2-frame">
+
+                <div class="pure-u-md-4-5">
+                    <div class="deposit-frame-table1">
+                        <a class="deposit-frame-table1-text" href="/cabinet/recharge"> < Back to payment method selection</a>
+                    </div>
+                </div>
+
+                <div onclick="but1()" class="pure-u-md-1-2 border-table1">
+                    <div class="deposit-frame-table">
+                        <p style="line-height: 2em;">
+                        <a id="deposit-frame-table-text"> 30000$ <br></a>
+                        <a id="deposit-frame-table-text2">No bonus</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="but2()" class="pure-u-md-1-2 border-table1">
+                    <div class="deposit-frame-table">
+                        <p style="line-height: 2em">
+                        <a id="deposit-frame-table-text"> 18000$ <br></a>
+                        <a id="deposit-frame-table-text2">No bonus</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="but3()" class="pure-u-md-1-4 border-table2">
+                    <div class="deposit-frame-table">
+                        <p style="line-height: 2em">
+                        <a id="deposit-frame-table-text"> 15000$ <br></a>
+                        <a id="deposit-frame-table-text2">No bonus</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="but4()" class="pure-u-md-1-4 border-table2">
+                    <div class="deposit-frame-table">
+                        <p style="line-height: 2em">
+                        <a id="deposit-frame-table-text"> 10000$ <br></a>
+                        <a id="deposit-frame-table-text2">No bonus</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="but5()" class="pure-u-md-1-4 border-table2">
+                    <div class="deposit-frame-table">
+                        <p style="line-height: 2em">
+                        <a id="deposit-frame-table-text"> 5000$ <br></a>
+                        <a id="deposit-frame-table-text2">No bonus</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="but6()" class="pure-u-md-1-4 border-table2">
+                    <div class="deposit-frame-table">
+                        <p style="line-height: 2em">
+                        <a id="deposit-frame-table-text"> 2000$ <br></a>
+                        <a id="deposit-frame-table-text2">No bonus</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="but7()" class="pure-u-md-1-4 border-table2">
+                    <div class="deposit-frame-table">
+                        <p style="line-height: 2em">
+                        <a id="deposit-frame-table-text"> 1200$ <br></a>
+                        <a id="deposit-frame-table-text2">No bonus</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div onclick="but8()" class="pure-u-md-1-4 border-table2">
+                    <div class="deposit-frame-table">
+                        <p style="line-height: 2em">
+                        <a id="deposit-frame-table-text"> 350$ <br></a>
+                        <a id="deposit-frame-table-text2">No bonus</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pure-u-md-1-4 deposit3-frame">
+
+                <form class="pure-form pure-form-stacked">
+                    <fieldset>
+                        <legend class="balancetext">Account balance</legend>
+                        <input id="pole" type="number" placeholder="Balance">
+                        <button type="submit" class="pure-button">Deposit</button>
+                    </fieldset>
+                </form>
+
+            </div>
+        </div>
+
+
+        <% } %>
+    </div>
+
+</div>
+<!--  <%- include('footer', {}); %> -->
+</body>
+</html>
