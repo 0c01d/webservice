@@ -1,11 +1,11 @@
-#!/usr/bin/env node
+"use strict";
 
 const app = require('./app');
 const debug = require('debug')('levonke-web:server');
 const http = require('http');
 const config = require('./config');
 
-let port = normalizePort(process.env.PORT || config.this.port);
+const port = normalizePort(process.env.PORT || config.this.port);
 app.set('port', port);
 
 const server = http.createServer(app);
@@ -70,5 +70,5 @@ function onListening() {
 server.on('error', onError);
 server.on('listening', onListening);
 
-console.log("Listen on port " + port);
+console.log("Server listen on port " + port);
 server.listen(port);

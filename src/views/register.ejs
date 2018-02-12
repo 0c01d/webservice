@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include('head', {}); %>
+</head>
+<body>
+
+<%- include('header', {}); %>
+
+<div class="overlay">
+
+    <div class="pure-g" id="register-table">
+        <div class="pure-u-1">
+            <div class="pure-menu pure-menu-horizontal register-submenu">
+                <ul class="pure-menu-list">
+                    <li class="pure-menu-item">
+                        <a class="pure-menu-link" href="login" <% if (pageType === "login" ) { %>style="font-weight: bold; color: #333"<% } %>>
+                               Log in
+                        </a>
+                    </li>
+                    <li class="pure-menu-item">
+                        <a class="pure-menu-link" href="/register" <% if (pageType === "register" ) { %>style="font-weight: bold; color: #333"<% } %>>
+                               Registration
+                        </a>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+
+        <% if (pageType === "register") { %>
+
+        <div class="pure-u">
+            <form class="pure-form pure-form-aligned" method="post" accept-charset="UTF-8" action="/register" autocomplete="on" id="register-form">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <input size="30"  name="nickname" type="text" placeholder="Enter Nickname">
+                        <span class="pure-form-message-inline">This is a required field.</span>
+                    </div>
+
+                    <div class="pure-control-group">
+                        <input size="30" name="phoneNumber" type="text" placeholder="Enter PhoneNubmer">
+                        <span class="pure-form-message-inline">This is a required field.</span>
+                    </div>
+
+                    <div class="pure-control-group">
+                        <input size="30" name="email" type="text" placeholder="Enter Email Address">
+                        <span class="pure-form-message-inline">This is a required field.</span>
+                    </div>
+
+                    <div class="pure-control-group">
+                        <input size="30" name="password" type="text" placeholder="Enter Password">
+                        <span class="pure-form-message-inline">This is a required field.</span>
+                    </div>
+
+                    <button type="submit" id="button-register" class="pure-button pure-button-primary">Register</button>
+                </fieldset>
+            </form>
+        </div>
+        <% } %>
+
+        <% if (pageType === "login") { %>
+        <div class="pure-u">
+            <form class="pure-form pure-form-aligned" method="post" accept-charset="UTF-8" action="/login" autocomplete="on" id="register-form">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <input id="nickname" size="30" name="nickname" type="text" placeholder="Enter Nickname">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <input id="password" size="30" name="password" type="text" placeholder="Enter Password">
+                    </div>
+
+                    <button type="submit" id="button-login" class="pure-button pure-button-primary">Sign in</button>
+                </fieldset>
+            </form>
+        </div>
+<% } %>
+    </div>
+</div>
+
+</body>
+</html>

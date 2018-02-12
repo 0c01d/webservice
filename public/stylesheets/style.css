@@ -1,14 +1,16 @@
+* {
+  font-family: "Droid Sans", serif;
+}
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: #333;
-  /*background: url("../images/background.jpg") no-repeat;*/
-}
-.bodynew {
-  background: url("../images/background.jpg");
+  background: url("../images/background.jpg") no-repeat;
   background-size: 100%;
 }
-.bodynew1 {
-  padding-left: 148px;
+
+.overlay {
+  background: rgba(20, 150, 20, 1);
 }
 
 .head-text {
@@ -23,18 +25,16 @@ body {
   margin-left:30%;
   margin-top:10%;
   box-shadow: 1px 1px 1px 1px black;
-  font-family: "Droid Sans"
 
 }
 .head-button {
   text-align: center;
-  font-family: "Droid Sans";
   font-size: 30px;
   background: #1b98f8;
   border-radius: 10px;
   margin-left:42%;
   width: 200px;
-  height: 50px;
+  height: auto;
   margin-top: 2%;
 }
 .head-button:hover {
@@ -124,9 +124,11 @@ margin: 1em 0;
 }
 
 .footer {
+  position: absolute;
   background: white;
-  margin-top:22%;
-  padding-left: 30%;
+  bottom: 0;
+  left: 150px;
+  width: calc(100% - 150px);
 }
 
 .register-submenu {
@@ -271,6 +273,14 @@ margin: 1em 0;
   border-bottom: none;
   font-size:110%;
   color: rgb(75, 113, 151);
+}
+
+#nav .menu-item__disabled {
+  background: rgb(200, 60, 90);
+}
+#nav .menu-item__disabled:hover,
+#nav .menu-item__disabled:focus {
+  background: rgb(200, 60, 90);
 }
 
 
