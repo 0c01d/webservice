@@ -67,10 +67,24 @@ margin: 1em 0;
   font-size: 80%;
 }
 
-.balancetext {
-
+.login-form {
+  border-radius: 50px;
+  padding: 1.5rem 2.5rem;
+  background-color: #ffffff;
+  position: fixed;
+  top: 25%;
+  left: 30%;
+  right: 38%;
 }
 
+.login-form input {
+  display: block;
+  margin: .5rem 0;
+}
+
+.login-form span {
+  color: #bb0000;
+}
 
 .deposit3-frame {
   margin: 2%;
@@ -195,12 +209,6 @@ margin: 1em 0;
 .deposit-frame-table:hover {
   border: 2px solid green;
 }
-
-
-
-
-
-
 
 .button-recharge {
   border: 1px solid #ccc;

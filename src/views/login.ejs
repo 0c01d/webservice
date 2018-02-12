@@ -6,12 +6,13 @@
 <body>
 <%- include('header', {}); %>
 <div>
-    <form class="login-form" action="/login">
-        <input type="text" placeholder="nickname"/>
-        <input type="password" placeholder="password"/>
-        <input type="submit"/>
+    <form action="/login" method="post" class="pure-form pure-form-aligned login-form">
+        <input class="login-form__email" type="text" placeholder="nickname" name="nickname"/>
+        <input class="login-form__password" type="password" placeholder="password" name="password"/>
+        <input class="login-form__submit" type="submit"/>
+        <span class="login-form__message"></span>
     </form>
 </div>
-<%- include('footer', {}); %>
+<script src="/js/login.js"></script>
 </body>
 </html>

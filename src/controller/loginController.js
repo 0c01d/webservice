@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const config = require("../../config");
+const authService = require("../backend/authService");
 
 router.get('/', function(req, res) {
     const isAuth = !!req["accessToken"];
@@ -15,8 +16,12 @@ router.get('/', function(req, res) {
     }
 });
 
-router.post('/', function (req, res) {
-    // TODO: check auth and abort if wrong (logout and delete cookie)
+router.post('/', async function (req, res) {
+    if (!req.body || typeof req.body !== "object") { throw new Error("Login body is empty"); }
+    const nickname = req.body.nickname;
+    const password = req.body.password;
+    const token = await authService.login(nickname, password);
+    res.setHeader("Set-Cookie", token);
     res.redirect("/");
 });
 
