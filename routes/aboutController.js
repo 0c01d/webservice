@@ -6,19 +6,17 @@ const config = require("./../config");
 const auth = require("./../auth");
 
 /**
- * Render index dashboard page
+ * Render about page
  */
-//TODO: match index and dashboard controllers
 router.get('/', async (req, res, next) => {
     const isAuth = !!req["accessToken"];
     const authUser = await auth.getCurrentProfile(req["accessToken"]);
-    const data = {
+    res.render('about', {
         projectName: config.project.name,
         isAuth: isAuth,
-        authUser: authUser,
-        title: config.project.name,
-    };
-    res.render('home', data);
+        authProfile: authProfile,
+        title: `${config.project.name} | About`,
+    });
 });
 
 module.exports = router;

@@ -12,4 +12,5 @@ class registerService {
     }
 
 }
+
 module.exports = registerService;
